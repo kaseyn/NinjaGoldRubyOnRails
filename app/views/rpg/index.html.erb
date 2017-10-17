@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ninja Gold</title>
+</head>
+<body>
+	<p>Your Gold: <%= @gold %></p>
+	<h1>Farm</h1>
+	<h3>(earns 10-20 gold)</h3>
+	<form action="/rpg/farm" method="POST">
+		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">​
+		<input type="submit" value="Find Gold!">
+	</form>
+	<h1>Cave</h1>
+	<h3>(earns 5-10 gold)</h3>
+	<form action="/rpg/cave" method="POST">
+		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">​
+		<input type="submit" value="Find Gold!">
+	</form>
+	<h1>House</h1>
+	<h3>(earns 2-5 gold)</h3>
+	<form action="/rpg/house" method="POST">
+		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">​
+		<input type="submit" value="Find Gold!">
+	</form>
+	<h1>Casino</h1>
+	<h3>(earns/takes 0-50 gold)</h3>
+	<form action="/rpg/casino" method="POST">
+		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">​
+		<input type="submit" value="Find Gold!">
+	</form>
+	<% @activities.reverse.each do |element| %>
+		<p><%= element %></p>
+	<% end %>
+</body>
+</html>
